@@ -107,20 +107,28 @@
     .step-no{font-size:12px;color:#9b8500;font-weight:900}
     .step h3{margin:8px 0;font-size:17px}
     .step p{font-size:12px;color:#777;margin:0}
-    .official-box{display:flex;justify-content:space-between;align-items:center;gap:30px;background:var(--yellow);border-radius:18px;padding:28px 34px;color:#111}
-    .official-box h3{font-size:23px;margin:0 0 5px}
-    .official-box p{font-size:12px;margin:0;color:#3e3900}
-    .official-link{background:#111;color:#fff;padding:13px 18px;border-radius:9px;font-weight:900;font-size:12px;white-space:nowrap}
     footer{background:#111;color:#fff;padding:34px 0}
     .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
     .footer-inner img{width:125px;background:#fff;border-radius:5px;padding:5px}
     .footer-text{font-size:10px;color:#aaa;max-width:560px}
     .footer-text a{color:var(--yellow);text-decoration:underline}
     .footer-copy{font-size:10px;color:#777;white-space:nowrap}
+    .contact-mini{line-height:2}
+    .contact-mini a{display:inline-block;direction:ltr;unicode-bidi:embed}
+    input[type="tel"],input[type="email"],input[type="number"]{direction:ltr;text-align:left}
+    [dir="rtl"] .fields .field{text-align:right}
+    [dir="rtl"] .fields input:not([type="tel"]):not([type="email"]):not([type="number"]),
+    [dir="rtl"] .fields textarea{ text-align:right; direction:rtl}
+    [dir="rtl"] .fields select{direction:rtl;text-align:right}
+    [dir="rtl"] .contact-mini{text-align:right;line-height:2.15}
+    [dir="rtl"] .contact-mini a{margin-inline-start:0;margin-inline-end:0}
+    [dir="rtl"] .checkline{flex-direction:row}
+    [dir="rtl"] .form-section-title{flex-direction:row}
+    [dir="rtl"] .submit-row{flex-direction:row}
     [dir="rtl"] .eyebrow{letter-spacing:0}
     [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] .section-head{text-align:right}
     [dir="rtl"] .hero-copy{margin-inline-start:0;margin-inline-end:auto}
-    [dir="rtl"] .form-title,[dir="rtl"] .official-box,[dir="rtl"] .footer-inner{direction:rtl}
+    [dir="rtl"] .form-title,[dir="rtl"] .footer-inner{direction:rtl}
     [dir="rtl"] .form-aside{text-align:right}
     [dir="rtl"] .visual-card{transform:rotate(-1.5deg)}
     @media(max-width:850px){
@@ -144,8 +152,6 @@
       .field.full{grid-column:auto}
       .form-title{align-items:flex-start;flex-direction:column}
       .submit-btn{width:100%}
-      .official-box{align-items:flex-start;flex-direction:column;padding:24px}
-      .official-link{width:100%;text-align:center}
       .footer-inner{align-items:flex-start;flex-direction:column}
       .footer-copy{white-space:normal}
     }
@@ -304,26 +310,26 @@
 
             <div class="form-section-title"><span>1</span><b data-fr="Vos informations personnelles" data-ar="معلوماتك الشخصية"></b></div>
             <div class="fields">
-              <div class="field"><label for="fullname" data-fr="Nom complet *" data-ar="الاسم الكامل *"></label><input id="fullname" name="fullname" required autocomplete="name" placeholder="Ex. : Youssef El Amrani"></div>
-              <div class="field"><label for="phone" data-fr="Téléphone *" data-ar="رقم الهاتف *"></label><input id="phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="06XXXXXXXX"></div>
+              <div class="field"><label for="fullname" data-fr="Nom complet *" data-ar="الاسم الكامل *"></label><input id="fullname" name="fullname" required autocomplete="name" placeholder="Ex. : Youssef El Amrani" data-placeholder-fr="Ex. : Youssef El Amrani" data-placeholder-ar="مثال: يوسف العمراني"></div>
+              <div class="field"><label for="phone" data-fr="Téléphone *" data-ar="رقم الهاتف *"></label><input id="phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="06XXXXXXXX" data-placeholder-fr="06XXXXXXXX" data-placeholder-ar="06XXXXXXXX"></div>
               <div class="field"><label for="email" data-fr="Adresse e-mail" data-ar="البريد الإلكتروني"></label><input id="email" name="email" type="email" autocomplete="email" placeholder="nom@exemple.com"></div>
               <div class="field"><label for="profile" data-fr="Votre situation *" data-ar="وضعيتك الحالية *"></label><select id="profile" name="profile" required><option value="" data-fr="Choisir une option" data-ar="اختر"></option><option data-fr="Entrepreneur / Investisseur" data-ar="مقاول / مستثمر"></option><option data-fr="Commerçant" data-ar="تاجر"></option><option data-fr="Société existante" data-ar="شركة قائمة"></option><option data-fr="Autre" data-ar="أخرى"></option></select></div>
             </div>
 
             <div class="form-section-title"><span>2</span><b data-fr="Emplacement envisagé" data-ar="موقع الوكالة المقترح"></b></div>
             <div class="fields">
-              <div class="field"><label for="city" data-fr="Ville *" data-ar="المدينة *"></label><input id="city" name="city" required placeholder="Ex. : Fès"></div>
-              <div class="field"><label for="district" data-fr="Quartier / Commune *" data-ar="الحي / الجماعة *"></label><input id="district" name="district" required></div>
-              <div class="field full"><label for="address" data-fr="Adresse ou description de l'emplacement" data-ar="العنوان أو وصف الموقع"></label><input id="address" name="address" placeholder=""></div>
+              <div class="field"><label for="city" data-fr="Ville *" data-ar="المدينة *"></label><input id="city" name="city" required placeholder="Ex. : Fès" data-placeholder-fr="Ex. : Fès" data-placeholder-ar="مثال: فاس"></div>
+              <div class="field"><label for="district" data-fr="Quartier / Commune *" data-ar="الحي / الجماعة *"></label><input id="district" name="district" required data-placeholder-fr="Ex. : Centre-ville" data-placeholder-ar="مثال: وسط المدينة" placeholder="Ex. : Centre-ville"></div>
+              <div class="field full"><label for="address" data-fr="Adresse ou description de l'emplacement" data-ar="العنوان أو وصف الموقع"></label><input id="address" name="address" placeholder="Adresse du local" data-placeholder-fr="Adresse du local" data-placeholder-ar="عنوان المحل أو وصف الموقع"></div>
               <div class="field"><label for="premises" data-fr="Disposez-vous d'un local ?" data-ar="هل تتوفر على محل؟"></label><select id="premises" name="premises"><option data-fr="À préciser" data-ar="لم أحدد بعد"></option><option data-fr="Oui, propriétaire" data-ar="نعم، أملكه"></option><option data-fr="Oui, en location" data-ar="نعم، مكتري"></option><option data-fr="Non, en recherche" data-ar="لا، أبحث عن محل"></option></select></div>
-              <div class="field"><label for="surface" data-fr="Surface approximative (m²)" data-ar="المساحة التقريبية (م²)"></label><input id="surface" name="surface" type="number" min="0" placeholder="Ex. : 35"></div>
+              <div class="field"><label for="surface" data-fr="Surface approximative (m²)" data-ar="المساحة التقريبية (م²)"></label><input id="surface" name="surface" type="number" min="0" placeholder="Ex. : 35" data-placeholder-fr="Ex. : 35" data-placeholder-ar="مثال: 35"></div>
             </div>
 
             <div class="form-section-title"><span>3</span><b data-fr="Votre expérience et votre capacité" data-ar="خبرتك وإمكانياتك"></b></div>
             <div class="fields">
               <div class="field"><label for="experience" data-fr="Expérience professionnelle" data-ar="الخبرة المهنية"></label><select id="experience" name="experience"><option data-fr="Débutant" data-ar="بدون خبرة"></option><option data-fr="Commerce / Gestion" data-ar="التجارة / التسيير"></option><option data-fr="Services financiers" data-ar="الخدمات المالية"></option><option data-fr="Autre secteur" data-ar="مجال آخر"></option></select></div>
-              <div class="field"><label for="budget" data-fr="Budget d'investissement estimé" data-ar="الميزانية الاستثمارية التقديرية"></label><select id="budget" name="budget"><option value="" data-fr="Choisir une fourchette" data-ar="اختر نطاقًا"></option><option>Moins de 50 000 MAD / أقل من 50.000 درهم</option><option>50 000 – 100 000 MAD</option><option>100 000 – 200 000 MAD</option><option>Plus de 200 000 MAD / أكثر من 200.000 درهم</option><option data-fr="À définir" data-ar="لم تحدد بعد"></option></select></div>
-              <div class="field full"><label for="message" data-fr="Présentez brièvement votre projet" data-ar="قدّم نبذة مختصرة عن مشروعك"></label><textarea id="message" name="message" placeholder=""></textarea><span class="hint" data-fr="Ex. : emplacement, disponibilité, objectifs…" data-ar="مثال: الموقع، التفرغ، أهداف المشروع…"></span></div>
+              <div class="field"><label for="budget" data-fr="Budget d'investissement estimé" data-ar="الميزانية الاستثمارية التقديرية"></label><select id="budget" name="budget"><option value="" data-fr="Choisir une fourchette" data-ar="اختر نطاقًا"></option><option data-fr="Moins de 50 000 MAD" data-ar="أقل من 50,000 درهم"></option><option data-fr="50 000 – 100 000 MAD" data-ar="من 50,000 إلى 100,000 درهم"></option><option data-fr="100 000 – 200 000 MAD" data-ar="من 100,000 إلى 200,000 درهم"></option><option data-fr="Plus de 200 000 MAD" data-ar="أكثر من 200,000 درهم"></option><option data-fr="À définir" data-ar="لم تحدد بعد"></option></select></div>
+              <div class="field full"><label for="message" data-fr="Présentez brièvement votre projet" data-ar="قدّم نبذة مختصرة عن مشروعك"></label><textarea id="message" name="message" placeholder="Décrivez votre projet..." data-placeholder-fr="Décrivez votre projet..." data-placeholder-ar="اكتب تفاصيل مشروعك هنا..."></textarea><span class="hint" data-fr="Ex. : emplacement, disponibilité, objectifs…" data-ar="مثال: الموقع، التفرغ، أهداف المشروع…"></span></div>
             </div>
 
             <label class="checkline"><input type="checkbox" id="consent" required><span data-fr="J'accepte que les informations saisies soient utilisées uniquement pour préparer et transmettre ma demande de prise de contact. *" data-ar="أوافق على استخدام المعلومات المدخلة فقط لإعداد وإرسال طلب التواصل الخاص بي. *"></span></label>
@@ -348,14 +354,7 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="official-box">
-          <div><h3 data-fr="Vous souhaitez contacter directement Wafacash ?" data-ar="هل تريد التواصل مباشرة مع وفاكاش؟"></h3><p data-fr="Consultez la page officielle dédiée aux partenariats pour obtenir les informations à jour." data-ar="اطلع على الصفحة الرسمية الخاصة بالشراكات للحصول على المعلومات المحينة."></p></div>
-          <a class="official-link" href="https://www.wafacash.com/fr/reseau/devenir-partenaire" target="_blank" rel="noopener" data-fr="Site officiel · Devenir partenaire ↗" data-ar="الموقع الرسمي · كن شريكًا ↗"></a>
-        </div>
-      </div>
-    </section>
+
   </main>
 
   <footer>
@@ -381,6 +380,17 @@
       });
       document.querySelectorAll("option[data-fr][data-ar]").forEach(option => {
         option.textContent = option.dataset[lang];
+      });
+      document.querySelectorAll("[data-placeholder-fr][data-placeholder-ar]").forEach(field => {
+        field.placeholder = field.dataset["placeholder" + (lang === "fr" ? "Fr" : "Ar")];
+      });
+      document.querySelectorAll("#agencyForm input:not([type=tel]):not([type=email]):not([type=number]), #agencyForm textarea").forEach(field => {
+        field.dir = lang === "ar" ? "rtl" : "ltr";
+        field.style.textAlign = lang === "ar" ? "right" : "left";
+      });
+      document.querySelectorAll("#agencyForm select").forEach(field => {
+        field.dir = lang === "ar" ? "rtl" : "ltr";
+        field.style.textAlign = lang === "ar" ? "right" : "left";
       });
       langButton.textContent = lang === "fr" ? "العربية" : "Français";
       langButton.setAttribute("aria-label", lang === "fr" ? "Passer en arabe" : "Passer en français");
