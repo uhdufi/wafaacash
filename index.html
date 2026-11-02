@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Formulaire indépendant de prise de contact pour un projet de partenariat et d'ouverture d'agence Wafacash au Maroc.">
+  <title>Projet d'agence Wafacash | Demande de partenariat</title>
+  <style>
+    :root{
+      --black:#111111;--ink:#191919;--muted:#6d6d6d;--yellow:#ffdf00;
+      --yellow-dark:#e8c900;--paper:#ffffff;--soft:#f5f5f2;--line:#e8e8e3;
+      --green:#17834b;--radius:20px;--shadow:0 18px 55px rgba(0,0,0,.09)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,"Noto Sans Arabic",sans-serif;line-height:1.6}
+    body[dir="rtl"]{font-family:"Tahoma","Arial",sans-serif}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .top-note{background:#171717;color:#fff;text-align:center;padding:8px 15px;font-size:12px;letter-spacing:.1px}
+    .top-note strong{color:var(--yellow)}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{width:145px;height:auto;object-fit:contain;display:block}
+    .brand-caption{border-inline-start:1px solid #ddd;padding-inline-start:13px;color:#666;font-size:11px;line-height:1.35}
+    .nav-actions{display:flex;align-items:center;gap:14px}
+    .nav-link{font-size:13px;font-weight:700;color:#444}
+    .lang-switch{border:1px solid #dedede;background:#fff;border-radius:999px;padding:9px 14px;font-weight:800;font-size:12px}
+    .lang-switch:hover{background:var(--yellow);border-color:var(--yellow)}
+    .hero{background:var(--black);color:#fff;position:relative;overflow:hidden;padding:76px 0 82px}
+    .hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:var(--yellow);opacity:.12;inset-inline-end:-180px;top:-260px;filter:blur(2px)}
+    .hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(255,223,0,.25);border-radius:50%;inset-inline-end:6%;bottom:-270px}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:60px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--yellow);font-weight:800;font-size:12px;letter-spacing:1.3px;text-transform:uppercase}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--yellow)}
+    h1{font-size:clamp(38px,5.2vw,66px);line-height:1.08;letter-spacing:-2px;margin:20px 0 18px;max-width:700px}
+    h1 span{color:var(--yellow)}
+    .hero-copy{color:#d0d0d0;max-width:570px;font-size:16px;margin:0 0 28px}
+    .primary-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--yellow);color:#111;border:0;border-radius:10px;padding:15px 23px;font-weight:900;box-shadow:0 8px 24px rgba(255,223,0,.16);transition:.2s}
+    .primary-btn:hover{background:#fff;transform:translateY(-2px)}
+    .hero-points{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;color:#ddd;font-size:12px}
+    .hero-points span{display:flex;align-items:center;gap:7px}
+    .tick{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:var(--yellow);color:#111;font-weight:900}
+    .visual-card{background:#fff;color:#111;border-radius:22px;padding:25px;box-shadow:0 25px 70px rgba(0,0,0,.3);transform:rotate(1.5deg);max-width:420px;margin-inline:auto}
+    .visual-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:17px}
+    .visual-head img{width:118px;height:auto}
+    .visual-label{background:#fff5a8;padding:6px 10px;border-radius:6px;font-size:10px;font-weight:900}
+    .visual-title{font-size:21px;font-weight:900;line-height:1.25;margin:23px 0 8px}
+    .visual-sub{font-size:12px;color:#777;margin:0 0 20px}
+    .visual-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #eee;font-size:12px}
+    .visual-icon{width:36px;height:36px;display:grid;place-items:center;background:#fff6a8;border-radius:10px;font-weight:900}
+    .visual-row b{display:block;font-size:12px}
+    .visual-row small{color:#888}
+    .visual-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:20px;font-size:11px;color:#777}
+    .visual-bottom strong{font-size:18px;color:#111}
+    .section{padding:82px 0}
+    .section.soft{background:var(--soft)}
+    .section-head{text-align:center;max-width:690px;margin:0 auto 42px}
+    .kicker{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8a7600;font-weight:900}
+    h2{font-size:clamp(28px,3.4vw,42px);line-height:1.18;letter-spacing:-1px;margin:10px 0 12px;color:#111}
+    .section-head p{color:var(--muted);margin:0}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .benefit{background:#fff;border:1px solid var(--line);border-radius:16px;padding:25px;min-height:190px}
+    .benefit-icon{width:46px;height:46px;border-radius:13px;background:#fff5a6;display:grid;place-items:center;font-size:21px;margin-bottom:18px;color:#111}
+    .benefit h3{font-size:17px;margin:0 0 8px}
+    .benefit p{font-size:13px;color:#777;margin:0}
+    .form-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:start}
+    .form-aside{background:#111;color:#fff;border-radius:20px;padding:30px;position:sticky;top:110px}
+    .form-aside h3{font-size:25px;line-height:1.2;margin:0 0 14px}
+    .form-aside p{font-size:13px;color:#c8c8c8}
+    .aside-list{list-style:none;padding:0;margin:25px 0 0}
+    .aside-list li{display:flex;gap:11px;align-items:flex-start;margin:15px 0;color:#eee;font-size:13px}
+    .aside-list .tick{flex:none}
+    .contact-mini{border-top:1px solid #393939;margin-top:25px;padding-top:18px;font-size:12px;color:#bbb}
+    .contact-mini a{color:var(--yellow);font-weight:800}
+    form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+    .form-title{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:24px}
+    .form-title h3{font-size:22px;margin:0}
+    .required-note{font-size:11px;color:#888}
+    .form-section-title{font-size:13px;font-weight:900;margin:25px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px}
+    .form-section-title span{width:25px;height:25px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-size:11px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:7px;min-width:0}
+    .field.full{grid-column:1/-1}
+    label{font-size:12px;font-weight:800;color:#333}
+    label i{color:#c00;font-style:normal}
+    input,select,textarea{width:100%;border:1px solid #deded9;border-radius:9px;background:#fff;padding:13px 13px;color:#171717;outline:none;transition:.2s}
+    input:focus,select:focus,textarea:focus{border-color:#c4a900;box-shadow:0 0 0 3px rgba(255,223,0,.2)}
+    input::placeholder,textarea::placeholder{color:#aaa}
+    textarea{min-height:110px;resize:vertical}
+    .hint{font-size:10px;color:#888}
+    .checkline{display:flex;align-items:flex-start;gap:10px;margin:22px 0;font-size:11px;color:#666}
+    .checkline input{width:17px;height:17px;flex:none;margin-top:2px;accent-color:#111}
+    .submit-row{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+    .submit-btn{background:#111;color:#fff;border:0;border-radius:10px;padding:15px 22px;font-weight:900;min-width:220px;transition:.2s}
+    .submit-btn:hover{background:var(--yellow);color:#111}
+    .secure-note{font-size:10px;color:#888;max-width:240px}
+    .status{display:none;margin-top:18px;padding:14px;border-radius:10px;font-size:12px}
+    .status.success{display:block;background:#e9f7ef;color:#146c3b;border:1px solid #bfe8ce}
+    .status.error{display:block;background:#fff0f0;color:#a32222;border:1px solid #f1c5c5}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
+    .step{border-top:3px solid var(--yellow);padding:22px 20px;background:#fff;border-radius:0 0 14px 14px}
+    .step-no{font-size:12px;color:#9b8500;font-weight:900}
+    .step h3{margin:8px 0;font-size:17px}
+    .step p{font-size:12px;color:#777;margin:0}
+    .official-box{display:flex;justify-content:space-between;align-items:center;gap:30px;background:var(--yellow);border-radius:18px;padding:28px 34px;color:#111}
+    .official-box h3{font-size:23px;margin:0 0 5px}
+    .official-box p{font-size:12px;margin:0;color:#3e3900}
+    .official-link{background:#111;color:#fff;padding:13px 18px;border-radius:9px;font-weight:900;font-size:12px;white-space:nowrap}
+    footer{background:#111;color:#fff;padding:34px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-inner img{width:125px;background:#fff;border-radius:5px;padding:5px}
+    .footer-text{font-size:10px;color:#aaa;max-width:560px}
+    .footer-text a{color:var(--yellow);text-decoration:underline}
+    .footer-copy{font-size:10px;color:#777;white-space:nowrap}
+    [dir="rtl"] .eyebrow{letter-spacing:0}
+    [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] .section-head{text-align:right}
+    [dir="rtl"] .hero-copy{margin-inline-start:0;margin-inline-end:auto}
+    [dir="rtl"] .form-title,[dir="rtl"] .official-box,[dir="rtl"] .footer-inner{direction:rtl}
+    [dir="rtl"] .form-aside{text-align:right}
+    [dir="rtl"] .visual-card{transform:rotate(-1.5deg)}
+    @media(max-width:850px){
+      .hero-grid,.form-layout{grid-template-columns:1fr;gap:34px}
+      .hero{padding:58px 0}
+      .visual-card{width:min(100%,440px)}
+      .form-aside{position:static}
+      .benefits{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      .container{width:min(100% - 28px,1160px)}
+      .nav{height:68px}.brand img{width:112px}.brand-caption,.nav-link{display:none}
+      .hero{padding:48px 0 55px}
+      h1{font-size:39px;letter-spacing:-1.2px}
+      .hero-copy{font-size:14px}
+      .visual-card{padding:19px}
+      .section{padding:58px 0}
+      .benefits,.steps{grid-template-columns:1fr}
+      form{padding:20px 16px}
+      .fields{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .form-title{align-items:flex-start;flex-direction:column}
+      .submit-btn{width:100%}
+      .official-box{align-items:flex-start;flex-direction:column;padding:24px}
+      .official-link{width:100%;text-align:center}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+      .footer-copy{white-space:normal}
+    }
+  </style>
+</head>
+<body>
+  <div class="top-note" data-fr="Espace indépendant de prise de contact — <strong>aucune affiliation officielle</strong> avec Wafacash." data-ar="منصة مستقلة لتلقي طلبات الاهتمام — <strong>ليست موقعًا رسميًا تابعًا لوفاكاش</strong>."></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#accueil" aria-label="Accueil">
+        <img src="data:image/webp;base64,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" alt="Logo Wafacash fourni par l'utilisateur">
+        <span class="brand-caption" data-fr="Projet d'agence<br>Demande de partenariat" data-ar="مشروع وكالة<br>طلب شراكة"></span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link" href="#formulaire" data-fr="Déposer une demande" data-ar="إيداع طلب"></a>
+        <button class="lang-switch" id="languageToggle" type="button" aria-label="Changer la langue">العربية</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-fr="DONNEZ VIE À VOTRE PROJET" data-ar="حوّل مشروعك إلى واقع"></div>
+          <h1 data-fr="Votre projet. <span>Une agence</span> à construire." data-ar="مشروعك… <span>وكالة</span> تبدأ بها المستقبل."></h1>
+          <p class="hero-copy" data-fr="Vous souhaitez entreprendre dans les services financiers de proximité ? Présentez votre projet et vos informations. Votre demande pourra être transmise à Wafacash pour étude, selon ses critères et sa validation." data-ar="هل ترغب في إطلاق مشروع في مجال الخدمات المالية للقرب؟ قدّم معلوماتك ومشروعك الأولي. يمكن توجيه طلبك إلى وفاكاش لدراسته وفق معاييرها وبعد موافقتها."></p>
+          <a class="primary-btn" href="#formulaire"><span data-fr="Présenter mon projet" data-ar="قدّم مشروعك الآن"></span><span aria-hidden="true">↗</span></a>
+          <div class="hero-points">
+            <span><b class="tick">✓</b><span data-fr="Formulaire simple" data-ar="استمارة سهلة"></span></span>
+            <span><b class="tick">✓</b><span data-fr="Projet au Maroc" data-ar="مشروع داخل المغرب"></span></span>
+            <span><b class="tick">✓</b><span data-fr="Étude par l'entreprise" data-ar="الدراسة من طرف الشركة"></span></span>
+          </div>
+        </div>
+        <div class="visual-card" aria-label="Aperçu du dossier de candidature">
+          <div class="visual-head">
+            <img src="data:image/webp;base64,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" alt="Wafacash">
+            <span class="visual-label" data-fr="NOUVEAU PROJET" data-ar="مشروع جديد"></span>
+          </div>
+          <div class="visual-title" data-fr="Construisons votre projet d'agence." data-ar="لنبدأ دراسة مشروع وكالتك."></div>
+          <p class="visual-sub" data-fr="Quelques informations pour mieux comprendre votre initiative." data-ar="بعض المعلومات لفهم مبادرتك بشكل أفضل."></p>
+          <div class="visual-row"><span class="visual-icon">01</span><span><b data-fr="Votre profil" data-ar="معلوماتك الشخصية"></b><small data-fr="Identité et coordonnées" data-ar="الهوية وبيانات التواصل"></small></span></div>
+          <div class="visual-row"><span class="visual-icon">02</span><span><b data-fr="Votre localité" data-ar="موقع المشروع"></b><small data-fr="Ville et emplacement envisagé" data-ar="المدينة والموقع المقترح"></small></span></div>
+          <div class="visual-row"><span class="visual-icon">03</span><span><b data-fr="Votre projet" data-ar="تفاصيل المشروع"></b><small data-fr="Local, expérience et budget" data-ar="المحل والخبرة والميزانية"></small></span></div>
+          <div class="visual-bottom"><span data-fr="Dossier de candidature" data-ar="ملف الترشيح"></span><strong>W.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-fr="UN PARTENARIAT À ÉTUDIER" data-ar="شراكة تستحق الدراسة"></div>
+          <h2 data-fr="Un accompagnement pour votre projet" data-ar="مواكبة لمشروعك"></h2>
+          <p data-fr="Wafacash présente sur son site un dispositif d'accompagnement de ses mandataires, notamment en matière de formation, d'assistance opérationnelle et de choix des localités." data-ar="تشير وفاكاش في موقعها إلى مواكبة المندوبين، خصوصًا في التكوين والدعم التقني والتشغيلي والمساعدة في اختيار مواقع الوكالات."></p>
+        </div>
+        <div class="benefits">
+          <article class="benefit"><div class="benefit-icon">↗</div><h3 data-fr="Un réseau établi" data-ar="شبكة قائمة"></h3><p data-fr="Découvrez les possibilités de rejoindre un réseau de services de proximité, sous réserve d'acceptation." data-ar="اكتشف إمكانية الانضمام إلى شبكة خدمات للقرب، بعد دراسة الطلب والموافقة عليه."></p></article>
+          <article class="benefit"><div class="benefit-icon">◎</div><h3 data-fr="Formation & assistance" data-ar="التكوين والمواكبة"></h3><p data-fr="L'accompagnement des mandataires est présenté par Wafacash parmi les avantages de son partenariat." data-ar="تذكر وفاكاش التكوين والمساعدة التقنية والتشغيلية ضمن مزايا الشراكة مع المندوبين."></p></article>
+          <article class="benefit"><div class="benefit-icon">⌖</div><h3 data-fr="Étude de l'emplacement" data-ar="دراسة الموقع"></h3><p data-fr="La localité et le potentiel de votre emplacement font partie des éléments utiles à présenter." data-ar="تُعد المدينة ومؤهلات الموقع المقترح من المعلومات المهمة التي يستحسن تقديمها."></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formulaire">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" data-fr="CANDIDATURE" data-ar="طلب الترشيح"></div>
+          <h2 data-fr="Présentez votre projet d'agence" data-ar="قدّم طلب فتح وكالتك"></h2>
+          <p data-fr="Remplissez les champs ci-dessous. Les informations seront préparées dans un message que vous pourrez envoyer au contact officiel." data-ar="املأ البيانات التالية. سنجهز لك رسالة تتضمن معلومات مشروعك لتتمكن من إرسالها إلى جهة التواصل الرسمية."></p>
+        </div>
+        <div class="form-layout">
+          <aside class="form-aside">
+            <div class="eyebrow" data-fr="AVANT DE COMMENCER" data-ar="قبل البدء"></div>
+            <h3 data-fr="Un dossier clair commence par de bonnes informations." data-ar="ملف واضح يبدأ بمعلومات دقيقة."></h3>
+            <p data-fr="Décrivez votre situation avec précision. Ne transmettez pas de données bancaires, de mots de passe ou de documents sensibles via ce formulaire." data-ar="اشرح وضعيتك بدقة. لا ترسل بيانات بنكية أو كلمات مرور أو وثائق حساسة عبر هذه الاستمارة."></p>
+            <ul class="aside-list">
+              <li><b class="tick">✓</b><span data-fr="Vos coordonnées pour être recontacté" data-ar="بيانات التواصل معك"></span></li>
+              <li><b class="tick">✓</b><span data-fr="La ville et le quartier envisagés" data-ar="المدينة والحي المقترحان"></span></li>
+              <li><b class="tick">✓</b><span data-fr="Les informations sur votre local et votre expérience" data-ar="معلومات المحل وخبرتك"></span></li>
+            </ul>
+            <div class="contact-mini"><span data-fr="Contact officiel Wafacash :" data-ar="التواصل الرسمي لوفاكاش:"></span><br><a href="tel:0522435050">05 22 43 50 50</a><br><a href="mailto:contact@wafacash.com">contact@wafacash.com</a></div>
+          </aside>
+
+          <form id="agencyForm" novalidate>
+            <div class="form-title"><h3 data-fr="Formulaire de candidature" data-ar="استمارة الترشيح"></h3><span class="required-note" data-fr="* Champs obligatoires" data-ar="* خانات إجبارية"></span></div>
+
+            <div class="form-section-title"><span>1</span><b data-fr="Vos informations personnelles" data-ar="معلوماتك الشخصية"></b></div>
+            <div class="fields">
+              <div class="field"><label for="fullname" data-fr="Nom complet *" data-ar="الاسم الكامل *"></label><input id="fullname" name="fullname" required autocomplete="name" placeholder="Ex. : Youssef El Amrani"></div>
+              <div class="field"><label for="phone" data-fr="Téléphone *" data-ar="رقم الهاتف *"></label><input id="phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="06XXXXXXXX"></div>
+              <div class="field"><label for="email" data-fr="Adresse e-mail" data-ar="البريد الإلكتروني"></label><input id="email" name="email" type="email" autocomplete="email" placeholder="nom@exemple.com"></div>
+              <div class="field"><label for="profile" data-fr="Votre situation *" data-ar="وضعيتك الحالية *"></label><select id="profile" name="profile" required><option value="" data-fr="Choisir une option" data-ar="اختر"></option><option data-fr="Entrepreneur / Investisseur" data-ar="مقاول / مستثمر"></option><option data-fr="Commerçant" data-ar="تاجر"></option><option data-fr="Société existante" data-ar="شركة قائمة"></option><option data-fr="Autre" data-ar="أخرى"></option></select></div>
+            </div>
+
+            <div class="form-section-title"><span>2</span><b data-fr="Emplacement envisagé" data-ar="موقع الوكالة المقترح"></b></div>
+            <div class="fields">
+              <div class="field"><label for="city" data-fr="Ville *" data-ar="المدينة *"></label><input id="city" name="city" required placeholder="Ex. : Fès"></div>
+              <div class="field"><label for="district" data-fr="Quartier / Commune *" data-ar="الحي / الجماعة *"></label><input id="district" name="district" required></div>
+              <div class="field full"><label for="address" data-fr="Adresse ou description de l'emplacement" data-ar="العنوان أو وصف الموقع"></label><input id="address" name="address" placeholder=""></div>
+              <div class="field"><label for="premises" data-fr="Disposez-vous d'un local ?" data-ar="هل تتوفر على محل؟"></label><select id="premises" name="premises"><option data-fr="À préciser" data-ar="لم أحدد بعد"></option><option data-fr="Oui, propriétaire" data-ar="نعم، أملكه"></option><option data-fr="Oui, en location" data-ar="نعم، مكتري"></option><option data-fr="Non, en recherche" data-ar="لا، أبحث عن محل"></option></select></div>
+              <div class="field"><label for="surface" data-fr="Surface approximative (m²)" data-ar="المساحة التقريبية (م²)"></label><input id="surface" name="surface" type="number" min="0" placeholder="Ex. : 35"></div>
+            </div>
+
+            <div class="form-section-title"><span>3</span><b data-fr="Votre expérience et votre capacité" data-ar="خبرتك وإمكانياتك"></b></div>
+            <div class="fields">
+              <div class="field"><label for="experience" data-fr="Expérience professionnelle" data-ar="الخبرة المهنية"></label><select id="experience" name="experience"><option data-fr="Débutant" data-ar="بدون خبرة"></option><option data-fr="Commerce / Gestion" data-ar="التجارة / التسيير"></option><option data-fr="Services financiers" data-ar="الخدمات المالية"></option><option data-fr="Autre secteur" data-ar="مجال آخر"></option></select></div>
+              <div class="field"><label for="budget" data-fr="Budget d'investissement estimé" data-ar="الميزانية الاستثمارية التقديرية"></label><select id="budget" name="budget"><option value="" data-fr="Choisir une fourchette" data-ar="اختر نطاقًا"></option><option>Moins de 50 000 MAD / أقل من 50.000 درهم</option><option>50 000 – 100 000 MAD</option><option>100 000 – 200 000 MAD</option><option>Plus de 200 000 MAD / أكثر من 200.000 درهم</option><option data-fr="À définir" data-ar="لم تحدد بعد"></option></select></div>
+              <div class="field full"><label for="message" data-fr="Présentez brièvement votre projet" data-ar="قدّم نبذة مختصرة عن مشروعك"></label><textarea id="message" name="message" placeholder=""></textarea><span class="hint" data-fr="Ex. : emplacement, disponibilité, objectifs…" data-ar="مثال: الموقع، التفرغ، أهداف المشروع…"></span></div>
+            </div>
+
+            <label class="checkline"><input type="checkbox" id="consent" required><span data-fr="J'accepte que les informations saisies soient utilisées uniquement pour préparer et transmettre ma demande de prise de contact. *" data-ar="أوافق على استخدام المعلومات المدخلة فقط لإعداد وإرسال طلب التواصل الخاص بي. *"></span></label>
+            <div class="submit-row">
+              <button class="submit-btn" type="submit"><span data-fr="Préparer ma demande" data-ar="إعداد طلبي"></span> <span aria-hidden="true">→</span></button>
+              <span class="secure-note" data-fr="Aucun envoi automatique : votre application e-mail s'ouvrira pour vous permettre de vérifier et d'envoyer le message." data-ar="لا يتم الإرسال تلقائيًا؛ سيفتح تطبيق البريد لتراجع الرسالة وترسلها بنفسك."></span>
+            </div>
+            <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head"><div class="kicker" data-fr="LES PROCHAINES ÉTAPES" data-ar="المراحل التالية"></div><h2 data-fr="Comment avancer ?" data-ar="كيف تتابع طلبك؟"></h2></div>
+        <div class="steps">
+          <article class="step"><div class="step-no">ÉTAPE 01</div><h3 data-fr="Présentez votre projet" data-ar="قدّم مشروعك"></h3><p data-fr="Renseignez vos coordonnées, votre ville et les caractéristiques du local envisagé." data-ar="أدخل بياناتك ومدينتك ومعلومات المحل المقترح."></p></article>
+          <article class="step"><div class="step-no">ÉTAPE 02</div><h3 data-fr="Envoyez votre demande" data-ar="أرسل طلبك"></h3><p data-fr="Vérifiez le message préparé puis envoyez-le au contact officiel de Wafacash." data-ar="راجع الرسالة التي تم إعدادها ثم أرسلها إلى جهة التواصل الرسمية لوفاكاش."></p></article>
+          <article class="step"><div class="step-no">ÉTAPE 03</div><h3 data-fr="Attendez l'étude du dossier" data-ar="انتظر دراسة الملف"></h3><p data-fr="Wafacash pourra vous contacter si votre projet correspond à ses besoins et à ses critères." data-ar="قد تتواصل معك وفاكاش إذا كان مشروعك مناسبًا لاحتياجاتها ومعاييرها."></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="official-box">
+          <div><h3 data-fr="Vous souhaitez contacter directement Wafacash ?" data-ar="هل تريد التواصل مباشرة مع وفاكاش؟"></h3><p data-fr="Consultez la page officielle dédiée aux partenariats pour obtenir les informations à jour." data-ar="اطلع على الصفحة الرسمية الخاصة بالشراكات للحصول على المعلومات المحينة."></p></div>
+          <a class="official-link" href="https://www.wafacash.com/fr/reseau/devenir-partenaire" target="_blank" rel="noopener" data-fr="Site officiel · Devenir partenaire ↗" data-ar="الموقع الرسمي · كن شريكًا ↗"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <img src="data:image/webp;base64,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" alt="Logo Wafacash fourni">
+      <div class="footer-text" data-fr="Site indépendant non affilié à Wafacash. Le logo et la marque appartiennent à leurs propriétaires respectifs. Ce formulaire ne constitue ni une demande officielle auprès de Wafacash, ni une promesse d'agrément ou d'ouverture d'agence. Pour une démarche officielle, contactez directement Wafacash." data-ar="موقع مستقل غير تابع لوفاكاش. الشعار والعلامة التجارية ملك لأصحابهما. هذه الاستمارة لا تُعد طلبًا رسميًا لدى وفاكاش ولا ضمانًا للموافقة أو فتح وكالة. للإجراءات الرسمية، يرجى التواصل مباشرة مع وفاكاش."></div>
+      <div class="footer-copy">© <span id="year"></span> · <span data-fr="Tous droits réservés" data-ar="جميع الحقوق محفوظة"></span></div>
+    </div>
+  </footer>
+
+  <script>
+    const logoData = "data:image/webp;base64,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";
+    const translations = document.querySelectorAll("[data-fr][data-ar]");
+    const langButton = document.getElementById("languageToggle");
+    let currentLang = "fr";
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      translations.forEach(el => {
+        el.innerHTML = el.dataset[lang];
+      });
+      document.querySelectorAll("option[data-fr][data-ar]").forEach(option => {
+        option.textContent = option.dataset[lang];
+      });
+      langButton.textContent = lang === "fr" ? "العربية" : "Français";
+      langButton.setAttribute("aria-label", lang === "fr" ? "Passer en arabe" : "Passer en français");
+      document.title = lang === "fr"
+        ? "Projet d'agence Wafacash | Demande de partenariat"
+        : "مشروع وكالة وفاكاش | طلب شراكة";
+    }
+
+    langButton.addEventListener("click", () => {
+      setLanguage(currentLang === "fr" ? "ar" : "fr");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("agencyForm");
+    const statusBox = document.getElementById("formStatus");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      statusBox.className = "status";
+      const requiredFields = ["fullname", "phone", "profile", "city", "district"];
+      let valid = true;
+
+      requiredFields.forEach(id => {
+        const field = document.getElementById(id);
+        if (!field.value.trim()) {
+          field.style.borderColor = "#c62828";
+          valid = false;
+        } else {
+          field.style.borderColor = "";
+        }
+      });
+
+      const phone = document.getElementById("phone");
+      const phoneClean = phone.value.replace(/[^\d+]/g, "");
+      if (phoneClean.length < 9) {
+        phone.style.borderColor = "#c62828";
+        valid = false;
+      }
+
+      if (!document.getElementById("consent").checked) valid = false;
+
+      if (!valid) {
+        statusBox.textContent = currentLang === "fr"
+          ? "Veuillez remplir les champs obligatoires et accepter la notice avant de continuer."
+          : "يرجى ملء الخانات الإجبارية والموافقة على الإشعار قبل المتابعة.";
+        statusBox.classList.add("error");
+        statusBox.scrollIntoView({behavior:"smooth", block:"nearest"});
+        return;
+      }
+
+      const labels = currentLang === "fr" ? {
+        subject:"Demande de partenariat – Projet d'agence",
+        fullname:"Nom complet", phone:"Téléphone", email:"E-mail", profile:"Situation",
+        city:"Ville", district:"Quartier / Commune", address:"Adresse du local",
+        premises:"Disponibilité du local", surface:"Surface (m²)", experience:"Expérience",
+        budget:"Budget estimé", message:"Présentation du projet"
+      } : {
+        subject:"طلب شراكة – مشروع فتح وكالة",
+        fullname:"الاسم الكامل", phone:"الهاتف", email:"البريد الإلكتروني", profile:"الوضعية",
+        city:"المدينة", district:"الحي / الجماعة", address:"عنوان المحل",
+        premises:"توفر المحل", surface:"المساحة (م²)", experience:"الخبرة",
+        budget:"الميزانية التقديرية", message:"تفاصيل المشروع"
+      };
+
+      const ids = ["fullname","phone","email","profile","city","district","address","premises","surface","experience","budget","message"];
+      const lines = ids.map(id => {
+        const el = document.getElementById(id);
+        const value = el.value.trim() || (currentLang === "fr" ? "Non renseigné" : "غير محدد");
+        return labels[id] + " : " + value;
+      });
+
+      const subject = encodeURIComponent(labels.subject);
+      const body = encodeURIComponent(lines.join("\n") + "\n\n" +
+        (currentLang === "fr"
+          ? "Demande préparée via un formulaire indépendant. Merci de m'indiquer la procédure officielle."
+          : "تم إعداد الطلب عبر استمارة مستقلة. المرجو إخباري بالمسطرة الرسمية."));
+      statusBox.textContent = currentLang === "fr"
+        ? "Votre demande est prête. Votre application e-mail va s'ouvrir : vérifiez les informations puis envoyez le message."
+        : "طلبك جاهز. سيفتح تطبيق البريد: راجع المعلومات ثم أرسل الرسالة.";
+      statusBox.classList.add("success");
+      window.location.href = "mailto:contact@wafacash.com?subject=" + subject + "&body=" + body;
+    });
+
+    setLanguage("fr");
+  </script>
+</body>
+</html>
