@@ -303,8 +303,20 @@ label{font-size:14px;font-weight:700}input,select,textarea{font-size:16px;line-h
 .brand,.brand-caption{font-family:inherit}.thank h1{font-size:clamp(32px,5vw,48px);line-height:1.55}.thank p{font-size:18px;line-height:2}.thank .kicker{font-size:14px}.thank .brand{font-family:var(--font-fr);font-size:11px;letter-spacing:.12em}
 html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:15px}html[lang=fr] .benefit p,html[lang=fr] .step p{font-size:14px}
 @media(max-width:600px){html[lang=ar] h1{font-size:40px;line-height:1.4}.hero-copy{font-size:16px}.section-head p{font-size:15px}.visual-title{font-size:25px}.form-title h3{font-size:24px}.faq-list summary{font-size:16px}.hero-points{font-size:11px}.thank p{font-size:16px}}
-.brand-name{display:inline-flex;align-items:center;font-weight:900;font-size:20px;color:#26351f;padding:10px 14px;border:1px solid #dfe5d8;border-radius:12px;background:#f7f8f2;white-space:nowrap}footer .brand-name{color:#fff;border-color:#4b5543;background:#20271d}@media(max-width:600px){.brand-name{font-size:17px;padding:8px 10px}}\n.privacy-note{font-size:12px;line-height:1.9;color:#59634f;background:#f4f6ef;border:1px solid #dfe6d6;border-radius:10px;padding:12px;margin:18px 0}\n</style></head>
-<body><div aria-hidden="true" class="reading-progress"><span></span></div><a class="skip-link" data-ar="الانتقال إلى الاستمارة" data-fr="Aller au formulaire" href="#formulaire">الانتقال إلى الاستمارة</a>
+.brand-name{display:inline-flex;align-items:center;font-weight:900;font-size:20px;color:#26351f;padding:10px 14px;border:1px solid #dfe5d8;border-radius:12px;background:#f7f8f2;white-space:nowrap}footer .brand-name{color:#fff;border-color:#4b5543;background:#20271d}@media(max-width:600px){.brand-name{font-size:17px;padding:8px 10px}}\n.privacy-note{font-size:12px;line-height:1.9;color:#59634f;background:#f4f6ef;border:1px solid #dfe6d6;border-radius:10px;padding:12px;margin:18px 0}\n
+/* Two-step welcome and application flow */
+body[data-page="welcome"] #formulaire{display:none}
+body[data-page="welcome"] #approach,body[data-page="welcome"] .steps,body[data-page="welcome"] .faq-section{display:none}
+body[data-page="form"] .hero,body[data-page="form"] #approach,body[data-page="form"] .steps,body[data-page="form"] .faq-section{display:none}
+body[data-page="form"] #formulaire{display:block;min-height:calc(100vh - 90px);padding-top:45px}
+.page-step{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 22px;padding:12px 16px;border:1px solid #e4e8dc;border-radius:14px;background:#f8f9f4;color:#46523d;font-size:13px}
+.page-step button,.location-btn,.back-welcome{border:0;border-radius:11px;padding:12px 16px;font:inherit;font-weight:700;cursor:pointer}
+.page-step button,.back-welcome{background:#e9eddf;color:#35422d}
+.location-btn{width:100%;background:#26351f;color:#fff;min-height:50px;margin-top:10px}
+.location-status{font-size:13px;line-height:1.8;margin-top:9px;color:#59634f}
+@media(max-width:600px){.page-step{align-items:stretch;flex-direction:column}.page-step button{width:100%}}
+</style></head>
+<body data-page="welcome"><div aria-hidden="true" class="reading-progress"><span></span></div><a class="skip-link" data-ar="الانتقال إلى الاستمارة" data-fr="Aller au formulaire" href="#formulaire">الانتقال إلى الاستمارة</a>
 <header>
 <div class="container nav">
 <a aria-label="الصفحة الرئيسية" class="brand" href="#accueil">
@@ -324,7 +336,7 @@ html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:
 <div class="eyebrow" data-ar="حوّل مشروعك إلى واقع" data-fr="DONNEZ VIE À VOTRE PROJET">حوّل مشروعك إلى واقع</div>
 <h1 data-ar="مشروعك اليوم.&lt;br&gt;&lt;span&gt;بداية جديدة&lt;/span&gt; للغد." data-fr="Votre projet aujourd’hui.&lt;br&gt;&lt;span&gt;Un nouveau départ&lt;/span&gt; pour demain.">مشروعك اليوم.<br/><span>بداية جديدة</span> للغد.</h1>
 <p class="hero-copy" data-ar="هل تطمح إلى فتح وكالة للخدمات المالية في المغرب؟ عرّف بمشروعك، وحدّد الموقع المقترح، وجهّز طلب التواصل في خطوات بسيطة." data-fr="Vous souhaitez ouvrir une agence de services financiers au Maroc ? Présentez votre projet, précisez son emplacement et préparez votre demande en quelques étapes.">هل تطمح إلى فتح وكالة للخدمات المالية في المغرب؟ عرّف بمشروعك، وحدّد الموقع المقترح، وجهّز طلب التواصل في خطوات بسيطة.</p>
-<a class="primary-btn" href="#formulaire"><span data-ar="قدّم مشروعك الآن" data-fr="Présenter mon projet">قدّم مشروعك الآن</span><span aria-hidden="true">↗</span></a>
+<button class="primary-btn" id="startApplication" type="button"><span data-ar="ابدأ الآن" data-fr="Commencer">ابدأ الآن</span><span aria-hidden="true">↗</span></button>
 <div class="hero-points">
 <span><b class="tick">✓</b><span data-ar="استمارة سهلة" data-fr="Formulaire simple">استمارة سهلة</span></span>
 <span><b class="tick">✓</b><span data-ar="مشروع داخل المغرب" data-fr="Projet au Maroc">مشروع داخل المغرب</span></span>
@@ -378,34 +390,21 @@ html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:
 </ul>
 <div class="contact-mini"><span data-ar="للاستفسارات، استخدم بيانات التواصل التي يعلنها صاحب هذا المشروع بشكل مستقل." data-fr="Pour toute question, utilisez les coordonnées publiées par le responsable de ce projet indépendant.">للاستفسارات، استخدم بيانات التواصل التي يعلنها صاحب هذا المشروع بشكل مستقل.</span></div>
 </aside>
+<div class="page-step"><span data-ar="الخطوة 2 من 2 — المعلومات المطلوبة" data-fr="Étape 2 sur 2 — Vos informations">الخطوة 2 من 2 — المعلومات المطلوبة</span><button type="button" id="backToWelcome" data-ar="العودة إلى الترحيب" data-fr="Retour à l’accueil">العودة إلى الترحيب</button></div>
 <form id="agencyForm" novalidate="">
-<div class="form-title"><h3 data-ar="استمارة الترشيح" data-fr="Formulaire de candidature">استمارة الترشيح</h3><span class="required-note" data-ar="* حقول إلزامية" data-fr="* Champs obligatoires">* حقول إلزامية</span></div><div class="completion"><div class="completion-head"><span data-ar="تقدّم إعداد طلبك" data-fr="Préparation de votre demande">تقدّم إعداد طلبك</span><b dir="ltr" id="completionValue">0%</b></div><div aria-label="تقدّم تعبئة الحقول الإلزامية" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="completion-track" role="progressbar"><span></span></div></div>
-<div class="form-section-title"><span>1</span><b data-ar="معلوماتك الشخصية" data-fr="Vos informations personnelles">معلوماتك الشخصية</b></div>
+<div class="form-title"><h3 data-ar="معلومات التواصل والموقع" data-fr="Coordonnées et localisation">معلومات التواصل والموقع</h3><span class="required-note" data-ar="* حقول إلزامية" data-fr="* Champs obligatoires">* حقول إلزامية</span></div>
+<div class="completion"><div class="completion-head"><span data-ar="تقدّم تعبئة الاستمارة" data-fr="Progression du formulaire">تقدّم تعبئة الاستمارة</span><b dir="ltr" id="completionValue">0%</b></div><div aria-label="تقدّم تعبئة الحقول الإلزامية" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="completion-track" role="progressbar"><span></span></div></div>
 <div class="fields">
-<div class="field"><label data-ar="الاسم الكامل *" data-fr="Nom complet *" for="fullname">الاسم الكامل *</label><input autocomplete="name" data-placeholder-ar="مثال: يوسف العمراني" data-placeholder-fr="Ex. : Youssef El Amrani" id="fullname" name="fullname" placeholder="مثال: يوسف العمراني" required=""/ maxlength="150"></div>
-<div class="field"><label data-ar="رقم الهاتف *" data-fr="Téléphone *" for="phone">رقم الهاتف *</label><input autocomplete="tel" data-placeholder-ar="06XXXXXXXX" data-placeholder-fr="06XXXXXXXX" id="phone" inputmode="tel" maxlength="20" name="phone" placeholder="06XXXXXXXX" required="" type="tel"/></div>
-<div class="field"><label data-ar="البريد الإلكتروني" data-fr="Adresse e-mail" for="email">البريد الإلكتروني</label><input autocomplete="email" id="email" name="email" placeholder="nom@exemple.com" type="email"/ maxlength="254"></div>
-<div class="field"><label data-ar="وضعك الحالي *" data-fr="Votre situation *" for="profile">وضعك الحالي *</label><select id="profile" name="profile" required=""><option data-ar="اختر" data-fr="Choisir une option" value="">اختر</option><option data-ar="مقاول / مستثمر" data-fr="Entrepreneur / Investisseur" value="1">مقاول / مستثمر</option><option data-ar="تاجر" data-fr="Commerçant" value="2">تاجر</option><option data-ar="شركة قائمة" data-fr="Société existante" value="3">شركة قائمة</option><option data-ar="أخرى" data-fr="Autre" value="4">أخرى</option></select></div>
+<div class="field full"><label data-ar="الاسم الكامل *" data-fr="Nom complet *" for="fullname">الاسم الكامل *</label><input autocomplete="name" id="fullname" name="fullname" placeholder="الاسم الكامل" required maxlength="150" /></div>
+<div class="field full"><label data-ar="رقم الهاتف *" data-fr="Téléphone *" for="phone">رقم الهاتف *</label><input autocomplete="tel" id="phone" inputmode="tel" maxlength="20" name="phone" placeholder="06XXXXXXXX" required type="tel" /></div>
+<div class="field full"><label data-ar="المدينة *" data-fr="Ville *" for="city">المدينة *</label><input autocomplete="address-level2" id="city" name="city" placeholder="مثال: فاس" required maxlength="150" /></div>
 </div>
-<div class="form-section-title"><span>2</span><b data-ar="موقع الوكالة المقترح" data-fr="Emplacement envisagé">موقع الوكالة المقترح</b></div>
-<div class="fields">
-<div class="field"><label data-ar="المدينة *" data-fr="Ville *" for="city">المدينة *</label><input data-placeholder-ar="مثال: فاس" data-placeholder-fr="Ex. : Fès" id="city" name="city" placeholder="مثال: فاس" required=""/ maxlength="150"></div>
-<div class="field"><label data-ar="الحي / الجماعة *" data-fr="Quartier / Commune *" for="district">الحي / الجماعة *</label><input data-placeholder-ar="مثال: وسط المدينة" data-placeholder-fr="Ex. : Centre-ville" id="district" name="district" placeholder="مثال: وسط المدينة" required=""/ maxlength="200"></div>
-<div class="field full"><label data-ar="العنوان أو وصف الموقع" data-fr="Adresse ou description de l'emplacement" for="address">العنوان أو وصف الموقع</label><input data-placeholder-ar="عنوان المحل أو وصف الموقع" data-placeholder-fr="Adresse du local" id="address" name="address" placeholder="عنوان المحل أو وصف الموقع"/ maxlength="500"></div>
-<div class="field"><label data-ar="هل تتوفر على محل؟" data-fr="Disposez-vous d'un local ?" for="premises">هل تتوفر على محل؟</label><select id="premises" name="premises"><option data-ar="لم أحدد بعد" data-fr="À préciser" value="0">لم أحدد بعد</option><option data-ar="نعم، أملكه" data-fr="Oui, propriétaire" value="1">نعم، أملكه</option><option data-ar="نعم، أستأجره" data-fr="Oui, en location" value="2">نعم، أستأجره</option><option data-ar="لا، أبحث عن محل" data-fr="Non, en recherche" value="3">لا، أبحث عن محل</option></select></div>
-<div class="field"><label data-ar="المساحة التقريبية (م²)" data-fr="Surface approximative (m²)" for="surface">المساحة التقريبية (م²)</label><input data-placeholder-ar="مثال: 35" data-placeholder-fr="Ex. : 35" id="surface" max="1000000" min="0" name="surface" placeholder="مثال: 35" step="any" type="number"/></div>
-</div>
-<div class="form-section-title"><span>3</span><b data-ar="خبرتك وإمكاناتك" data-fr="Votre expérience et votre capacité">خبرتك وإمكاناتك</b></div>
-<div class="fields">
-<div class="field"><label data-ar="الخبرة المهنية" data-fr="Expérience professionnelle" for="experience">الخبرة المهنية</label><select id="experience" name="experience"><option data-ar="بدون خبرة" data-fr="Débutant" value="0">بدون خبرة</option><option data-ar="التجارة / التسيير" data-fr="Commerce / Gestion" value="1">التجارة / التسيير</option><option data-ar="الخدمات المالية" data-fr="Services financiers" value="2">الخدمات المالية</option><option data-ar="مجال آخر" data-fr="Autre secteur" value="3">مجال آخر</option></select></div>
-<div class="field"><label data-ar="الميزانية الاستثمارية التقديرية" data-fr="Budget d'investissement estimé" for="budget">الميزانية الاستثمارية التقديرية</label><select id="budget" name="budget"><option data-ar="اختر الميزانية التقريبية" data-fr="Choisir une fourchette" value="">اختر الميزانية التقريبية</option><option data-ar="أقل من 50,000 درهم" data-fr="Moins de 50 000 MAD" value="1">أقل من 50,000 درهم</option><option data-ar="من 50,000 إلى 100,000 درهم" data-fr="50 000 – 100 000 MAD" value="2">من 50,000 إلى 100,000 درهم</option><option data-ar="من 100,000 إلى 200,000 درهم" data-fr="100 000 – 200 000 MAD" value="3">من 100,000 إلى 200,000 درهم</option><option data-ar="أكثر من 200,000 درهم" data-fr="Plus de 200 000 MAD" value="4">أكثر من 200,000 درهم</option><option data-ar="لم أُحدّدها بعد" data-fr="À définir" value="5">لم أُحدّدها بعد</option></select></div>
-<div class="field full"><label data-ar="قدّم نبذة مختصرة عن مشروعك" data-fr="Présentez brièvement votre projet" for="message">قدّم نبذة مختصرة عن مشروعك</label><textarea data-placeholder-ar="اكتب تفاصيل مشروعك هنا..." data-placeholder-fr="Décrivez votre projet..." id="message" name="message" placeholder="اكتب تفاصيل مشروعك هنا..." maxlength="5000"></textarea><span class="hint" data-ar="مثال: الموقع، التفرغ، أهداف المشروع…" data-fr="Ex. : emplacement, disponibilité, objectifs…">مثال: الموقع، التفرغ، أهداف المشروع…</span></div>
-</div>
-<p class="privacy-note" data-ar="تنبيه الخصوصية: عند الإرسال ستُنقل المعلومات التي أدخلتها إلى قاعدة بيانات المشروع لمعالجة الطلب والتواصل معك. لا تُدخل كلمات مرور أو بيانات بطاقات أو معلومات بنكية أو وثائق هوية. لا ترسل الطلب إلا إذا كنت تعرف الجهة المسؤولة عن هذه الصفحة." data-fr="Confidentialité : lors de l’envoi, les informations saisies seront transmises à la base de données du projet afin de traiter la demande et de vous contacter. Ne saisissez aucun mot de passe, numéro de carte, donnée bancaire ou document d’identité. N’envoyez le formulaire que si vous connaissez le responsable de cette page.">تنبيه الخصوصية: عند الإرسال ستُنقل المعلومات التي أدخلتها إلى قاعدة بيانات المشروع لمعالجة الطلب والتواصل معك. لا تُدخل كلمات مرور أو بيانات بطاقات أو معلومات بنكية أو وثائق هوية. لا ترسل الطلب إلا إذا كنت تعرف الجهة المسؤولة عن هذه الصفحة.</p>\n<label class="checkline"><input id="consent" required="" type="checkbox"/><span data-ar="أوافق على حفظ بياناتي واستخدامها لمعالجة طلبي والتواصل معي بشأنه. *" data-fr="J’accepte l’enregistrement de mes informations pour traiter ma demande et me recontacter à ce sujet. *">أوافق على حفظ بياناتي واستخدامها لمعالجة طلبي والتواصل معي بشأنه. *</span></label>
-<div class="submit-row">
-<button class="submit-btn" type="submit"><span data-ar="إرسال طلبي" data-fr="Envoyer ma demande">إرسال طلبي</span> <span aria-hidden="true">→</span></button>
-<span class="secure-note" data-ar="سيتم إرسال المعلومات إلى قاعدة بيانات المشروع بعد موافقتك." data-fr="Les informations seront envoyées à la base de données du projet après votre consentement.">سيتم إرسال المعلومات إلى قاعدة بيانات المشروع بعد موافقتك.</span>
-</div>
+<button class="location-btn" id="getLocation" type="button"><span data-ar="⌖ تحديد موقعي الحالي" data-fr="⌖ Détecter ma position actuelle">⌖ تحديد موقعي الحالي</span></button>
+<p class="location-status" id="locationStatus" aria-live="polite" data-ar="اختياري: اضغط للسماح للمتصفح بتحديد موقعك. لن يعمل ذلك إلا بعد موافقتك، وقد يطلب المتصفح تفعيل الموقع." data-fr="Facultatif : autorisez le navigateur à détecter votre position. Cela nécessite votre accord et l’activation de la localisation.">اختياري: اضغط للسماح للمتصفح بتحديد موقعك. لن يعمل ذلك إلا بعد موافقتك، وقد يطلب المتصفح تفعيل الموقع.</p>
+<input type="hidden" id="geoLocation" name="geoLocation" value="" />
+<p class="privacy-note" data-ar="تنبيه الخصوصية: عند الإرسال ستُنقل المعلومات التي أدخلتها إلى قاعدة بيانات هذا المشروع المستقل للتواصل بشأن طلبك. تحديد الموقع اختياري ولا يتم إلا بعد موافقتك. لا تُدخل كلمات مرور أو بيانات بنكية أو وثائق هوية. هذه الصفحة مشروع مستقل وليست الموقع الرسمي لأي مؤسسة مالية." data-fr="Confidentialité : vos informations seront transmises à la base de données de ce projet indépendant pour le suivi de votre demande. La géolocalisation est facultative et ne sera utilisée qu’avec votre accord. Ne saisissez aucun mot de passe, donnée bancaire ou document d’identité. Cette page est indépendante et n’est le site officiel d’aucune institution financière.">تنبيه الخصوصية: عند الإرسال ستُنقل المعلومات التي أدخلتها إلى قاعدة بيانات هذا المشروع المستقل للتواصل بشأن طلبك. تحديد الموقع اختياري ولا يتم إلا بعد موافقتك. لا تُدخل كلمات مرور أو بيانات بنكية أو وثائق هوية. هذه الصفحة مشروع مستقل وليست الموقع الرسمي لأي مؤسسة مالية.</p>
+<label class="checkline"><input id="consent" required type="checkbox"/><span data-ar="أوافق على حفظ بيانات التواصل والمدينة التي أدخلتها واستخدامها للرد على طلبي. *" data-fr="J’accepte l’enregistrement de mes coordonnées et de ma ville pour répondre à ma demande. *">أوافق على حفظ بيانات التواصل والمدينة التي أدخلتها واستخدامها للرد على طلبي. *</span></label>
+<div class="submit-row"><button class="submit-btn" type="submit"><span data-ar="إرسال المعلومات" data-fr="Envoyer mes informations">إرسال المعلومات</span> <span aria-hidden="true">→</span></button><span class="secure-note" data-ar="لن يتم إرسال موقعك إلا إذا وافقت على تحديده." data-fr="Votre position ne sera transmise que si vous autorisez sa détection.">لن يتم إرسال موقعك إلا إذا وافقت على تحديده.</span></div>
 <div aria-live="polite" class="status" id="formStatus" role="status"></div>
 </form>
 </div>
@@ -479,17 +478,12 @@ html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:
       event.preventDefault();
       if (form.dataset.sending === "true") return;
       statusBox.className = "status";
-      const requiredFields = ["fullname", "phone", "profile", "city", "district"];
+      const requiredFields = ["fullname", "phone", "city"];
       let valid = true;
-
       requiredFields.forEach(id => {
         const field = document.getElementById(id);
-        if (!field.value.trim()) {
-          field.style.borderColor = "#c62828";
-          valid = false;
-        } else {
-          field.style.borderColor = "";
-        }
+        if (!field.value.trim()) { field.style.borderColor = "#c62828"; valid = false; }
+        else { field.style.borderColor = ""; }
       });
 
       const phone = document.getElementById("phone");
@@ -508,8 +502,8 @@ html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:
 
       if (!valid) {
         statusBox.textContent = currentLang === "fr"
-          ? "Vérifiez les champs obligatoires, le téléphone marocain, l’adresse e-mail et votre accord."
-          : "يرجى التحقق من الحقول الإلزامية ورقم الهاتف المغربي والبريد الإلكتروني والموافقة على استخدام البيانات.";
+          ? "Vérifiez le nom, le téléphone marocain, la ville et votre consentement."
+          : "يرجى التحقق من الاسم الكامل ورقم الهاتف المغربي والمدينة والموافقة على استخدام البيانات.";
         statusBox.classList.add("error");
         statusBox.scrollIntoView({behavior:"smooth", block:"nearest"});
         return;
@@ -519,19 +513,22 @@ html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:
       const submitButton = form.querySelector('[type="submit"]');
       const submitText = submitButton.querySelector('span');
       const readValue = id => document.getElementById(id).value.trim();
-      const readOption = id => {
-        const el = document.getElementById(id);
-        return el.value ? el.selectedOptions[0].dataset.ar : null;
-      };
+      const geo = readValue('geoLocation');
       const payload = {
-        fullname: readValue('fullname'), phone: phoneClean,
-        email: readValue('email') || null, profile: readOption('profile'),
-        city: readValue('city'), district: readValue('district'),
-        address: readValue('address') || null, premises: readOption('premises'),
-        surface: readValue('surface') ? Number(readValue('surface')) : null,
-        experience: readOption('experience'), budget: readOption('budget'),
-        message: readValue('message') || null,
-        consent: document.getElementById('consent').checked, language: submittedLang
+        fullname: readValue('fullname'),
+        phone: phoneClean,
+        city: readValue('city'),
+        district: null,
+        address: geo || null,
+        email: null,
+        profile: null,
+        premises: null,
+        surface: null,
+        experience: null,
+        budget: null,
+        message: null,
+        consent: document.getElementById('consent').checked,
+        language: submittedLang
       };
       form.dataset.sending = 'true';
       submitButton.disabled = true;
@@ -539,7 +536,8 @@ html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:
       form.setAttribute('aria-busy', 'true');
       submitText.textContent = submittedLang === 'ar' ? 'جارٍ إرسال الطلب…' : 'Envoi en cours…';
       try {
-        // Supabase endpoint retained from the supplied source. Confirm that this project and table belong to you,\n        // enable RLS, and restrict INSERT permissions before publishing.\n        const response = await fetch('https://gzfvpdaubsmgvlndzlee.supabase.co/rest/v1/agency_requests', {
+        // Supabase endpoint retained from the supplied source. Confirm ownership, enable RLS, and restrict INSERT permissions.
+        const response = await fetch('https://gzfvpdaubsmgvlndzlee.supabase.co/rest/v1/agency_requests', {
           method: 'POST',
           headers: {
             'apikey': 'sb_publishable_PDMOMjwf_tVB8hAz5-i7iA_2GDcZWUb',
@@ -565,6 +563,40 @@ html[lang=fr] .hero-copy{font-size:16px}html[lang=fr] .section-head p{font-size:
         submitText.textContent = currentLang === 'ar' ? 'إرسال طلبي' : 'Envoyer ma demande';
       }
 
+    });
+
+    const startApplication = document.getElementById('startApplication');
+    const backToWelcome = document.getElementById('backToWelcome');
+    function showPage(page) {
+      document.body.dataset.page = page;
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      if (page === 'form') document.getElementById('fullname').focus({preventScroll:true});
+    }
+    startApplication.addEventListener('click', () => showPage('form'));
+    backToWelcome.addEventListener('click', () => showPage('welcome'));
+
+    const getLocationButton = document.getElementById('getLocation');
+    const locationStatus = document.getElementById('locationStatus');
+    getLocationButton.addEventListener('click', () => {
+      if (!('geolocation' in navigator)) {
+        locationStatus.textContent = currentLang === 'ar' ? 'المتصفح لا يدعم تحديد الموقع.' : 'La géolocalisation n’est pas prise en charge.';
+        return;
+      }
+      getLocationButton.disabled = true;
+      locationStatus.textContent = currentLang === 'ar' ? 'جارٍ طلب إذن تحديد الموقع…' : 'Demande d’autorisation de localisation…';
+      navigator.geolocation.getCurrentPosition(position => {
+        const lat = position.coords.latitude.toFixed(6);
+        const lon = position.coords.longitude.toFixed(6);
+        document.getElementById('geoLocation').value = `GPS: ${lat}, ${lon}`;
+        locationStatus.textContent = currentLang === 'ar' ? `تم تحديد الموقع بنجاح. الإحداثيات: ${lat}, ${lon}` : `Position détectée : ${lat}, ${lon}`;
+        getLocationButton.disabled = false;
+      }, error => {
+        const messages = currentLang === 'ar'
+          ? {1:'لم تسمح بالوصول إلى الموقع. يمكنك متابعة الاستمارة دون تحديده.',2:'تعذر تحديد الموقع حاليًا. تحقق من إعدادات GPS.',3:'انتهت مهلة تحديد الموقع. حاول مرة أخرى.'}
+          : {1:'Autorisation refusée. Vous pouvez continuer sans géolocalisation.',2:'Position indisponible. Vérifiez les réglages GPS.',3:'Délai dépassé. Réessayez.'};
+        locationStatus.textContent = messages[error.code] || messages[2];
+        getLocationButton.disabled = false;
+      }, {enableHighAccuracy:true, timeout:15000, maximumAge:60000});
     });
 
     setLanguage("ar");
