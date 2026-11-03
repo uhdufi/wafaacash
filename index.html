@@ -514,19 +514,13 @@ body[data-page="form"] #formulaire{display:block;min-height:calc(100vh - 90px);p
       const submitText = submitButton.querySelector('span');
       const readValue = id => document.getElementById(id).value.trim();
       const geo = readValue('geoLocation');
+      // Send only columns used by this version of the Supabase table.
+      // This avoids PostgREST errors caused by sending unknown column names.
       const payload = {
         fullname: readValue('fullname'),
         phone: phoneClean,
         city: readValue('city'),
-        district: null,
         address: geo || null,
-        email: null,
-        profile: null,
-        premises: null,
-        surface: null,
-        experience: null,
-        budget: null,
-        message: null,
         consent: document.getElementById('consent').checked,
         language: submittedLang
       };
@@ -546,14 +540,23 @@ body[data-page="form"] #formulaire{display:block;min-height:calc(100vh - 90px);p
           },
           body: JSON.stringify(payload)
         });
-        if (response.status !== 201) throw new Error('Request was not confirmed');
+        if (!response.ok) {
+          let details = '';
+          try {
+            const errorData = await response.json();
+            details = errorData.message || errorData.details || errorData.hint || '';
+          } catch (_) {}
+          throw new Error(details || ('Supabase HTTP ' + response.status));
+        }
+        // return=minimal may return 201 (Created); accept any successful 2xx response.
         // No personal information is placed in the redirect URL.
         window.location.assign('tankupage.html?lang=' + encodeURIComponent(submittedLang));
       } catch (error) {
+        console.error('Supabase submission error:', error);
         statusBox.className = 'status error';
         statusBox.textContent = submittedLang === 'ar'
-          ? 'تعذّر تأكيد حفظ الطلب. تحقّق من الاتصال وحاول لاحقًا. إذا استمرّ الخطأ، تواصل مع الدعم قبل إعادة الإرسال.'
-          : 'Impossible de confirmer l’enregistrement. Vérifiez votre connexion et réessayez plus tard. Si le problème persiste, contactez l’assistance avant un nouvel envoi.';
+          ? 'لم يتم حفظ الطلب. قد تكون قاعدة البيانات أو صلاحيات الإرسال غير مهيأة بشكل صحيح. حاول لاحقًا، وإذا تكرر الخطأ راجع إعدادات Supabase.'
+          : 'La demande n’a pas été enregistrée. La base de données ou les autorisations d’envoi ne sont peut-être pas correctement configurées. Réessayez plus tard ou vérifiez Supabase.';
         statusBox.scrollIntoView({behavior:'smooth', block:'nearest'});
       } finally {
         form.dataset.sending = 'false';
